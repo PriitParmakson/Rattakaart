@@ -48,6 +48,8 @@ var aboutWindow = L.control.about();
 
 initBasemaps(config.basemaps);
 
+var alguseValikureziim = false;
+
 // Sea nupukäsitlejad.
 // Abiteave.
 document.querySelector('#Info').onclick = function () {
@@ -62,6 +64,17 @@ document.querySelector('#Uusnupp').onclick = function () {
     .textContent = 'Lähtestatud.';
 }
 
+// Sea alguspunkt.
+document.querySelector('#Algusnupp').onclick = function () {
+  alguseValikureziim = true;
+  // Kuva markerid kõigile punktidele.
+  pMap.forEach(
+    (p) => {
+      kuvaPunkt(p.nimi, 1.0, alguspunktiValikuKasitleja);
+    }
+  );
+}
+
 /* / Samm tagasi.
 document.querySelector('#Tagasinupp').onclick = function () {
   marsruut.pop();
@@ -71,10 +84,11 @@ document.querySelector('#Tagasinupp').onclick = function () {
 
 var marsruut;
 var pikkus;
-LahtestaMarsruut();
+LahtestaMarsruut('Vanemuise');
 
-// LahtestaMarsruut
-function LahtestaMarsruut() {
+// LahtestaMarsruut eemaldab kõik senised markerid, seab marsruudi alguspunktiks
+// punkti nimega alguspunkt ja kuvad marsruudi jätku kandidaatpunktid.
+function LahtestaMarsruut(alguspunkt) {
   marsruut = [];
   pikkus = [];
   // Eemalda kõik markerid.
@@ -95,10 +109,10 @@ function LahtestaMarsruut() {
       }
     }
   );
-  // Sea marsruudi alguspunktiks 'Vanemuise'.
-  marsruut.push('Vanemuise');
+  // Sea marsruudi alguspunktiks alguspunkt.
+  marsruut.push(alguspunkt);
   pikkus.push(0);
-  kuvaPunkt('Vanemuise', 1.0);
+  kuvaPunkt(alguspunkt, 1.0, markerOnClick);
   kuvaMarsruut();
   kuvaKandidaadid();
 }
@@ -114,12 +128,12 @@ function kuvaKandidaadid() {
     (loik) => {
       if (loik.a == vp) {
         kn = pMap.get(loik.l).nimi; // Kandidaatpunkti nimi.
-        kuvaPunkt(kn, 0.5);
+        kuvaPunkt(kn, 0.5, markerOnClick);
         return;
       }
       if (loik.l == vp) {
         kn = pMap.get(loik.a).nimi; // Kandidaatpunkti nimi.
-        kuvaPunkt(kn, 0.5);
+        kuvaPunkt(kn, 0.5, markerOnClick);
       }
     }
   );
@@ -128,8 +142,9 @@ function kuvaKandidaadid() {
 // kuvaPunkt otsib mäpist pMap punkti nimi ja loob sellele vastava markeri.
 // Kui marker on juba olemas, siis muudab ainult läbipaistmatust.
 // Teise parameetrina anda läbipaistmatus. Kandidaadi läbipaistmatus on 0.5;
-// marsruudi tavalise punkti läbipaistmatus on 1.0. 
-function kuvaPunkt(nimi, opacity) {
+// marsruudi tavalise punkti läbipaistmatus on 1.0.
+// Kolmas parameeter on punkti markerile klõpsamist käsitlev funktsioon.
+function kuvaPunkt(nimi, opacity, handler) {
   console.log('kuvaPunkt: ', nimi, opacity);
   // Otsi mäpist punkt.
   p = pMap.get(nimi);
@@ -173,7 +188,7 @@ function kuvaPunkt(nimi, opacity) {
       }
     );
     // Lisa markerivajutuse käsitleja.
-    m.on('click', markerOnClick);
+    m.on('click', handler);
   }
 }
 
@@ -218,6 +233,15 @@ function leiaLoiguPikkus(p1, p2) {
   return undefined;
 }
 
+// alguspunktiValikuKasitleja
+function alguspunktiValikuKasitleja(e) {
+  console.log("Klõpsatud markerile: " + this.options.title);
+  kpn = this.options.title; // Klõpsatud punkti nimi.
+  LahtestaMarsruut(kpn);
+  alguseValikureziim = false;
+}
+
+// markerOnClick
 function markerOnClick(e) {
   // console.log("hi. you clicked the marker at " + e.latlng);
   console.log("Klõpsatud markerile: " + this.options.title);

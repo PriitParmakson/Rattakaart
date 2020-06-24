@@ -1,5 +1,10 @@
 // Määratle punktid.
 var punktid = [
+  { nimi: "Kaberneeme", loc: [59.513032, 25.269047] },
+  { nimi: "Valkla t", loc: [59.467443, 25.313982] },
+  { nimi: "Kaberla", loc: [59.465066, 25.240145] },
+  { nimi: "Nehatu", loc: [59.44489, 24.930312] },
+  { nimi: "Jõelähtme", loc: [59.442044, 25.135965] },
   { nimi: "Harku", loc: [59.391875, 24.581969] },
   { nimi: "Astangu", loc: [59.40654, 24.646675] },
   { nimi: "Hiiu krg", loc: [59.383413, 24.669578] },
@@ -19,6 +24,7 @@ var punktid = [
   { nimi: "Kose", loc: [59.186829, 25.164587] },
   { nimi: "Kostivere (Aruküla t)", loc: [59.426089, 25.076936] },
   { nimi: "Laagri", loc: [59.351725, 24.610383] },
+  { nimi: "Lagedi", loc: [59.402105, 24.941926] },
   { nimi: "Lagedi (Kostivere tee)", loc: [59.415892, 24.944653] },
   { nimi: "Linnuse t", loc: [59.458844, 24.905473] },
   { nimi: "Lähtse", loc: [59.293522, 24.852573] },
