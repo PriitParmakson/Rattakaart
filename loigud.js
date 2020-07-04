@@ -69,5 +69,6 @@ var loigud = [
   { "a": "Pirgu", "l": "Salutaguse", "p": 3.5 },
   { "a": "Salutaguse", "l": "Urge", "p": 3.9 },
   { "a": "Urge", "l": "Kohila", "p": 2.4 },
+  { "a": "Kohila", "l": "Kiisa", "p": 9.7 },
   { "a": "Hageri", "l": "Kiisa", "p": 8.8 }
 ]
