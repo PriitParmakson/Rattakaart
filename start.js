@@ -208,7 +208,7 @@ function kuvaMarsruut() {
     }
   );
   document.querySelector('#Marsruut').textContent = ms +
-    ' = ' + p.toString() + ' km';
+    ' = ' + p.toFixed(2) + ' km';
 }
 
 // punktMarsruudil selgitab välja, kas punkt pnimi asub marsruudil marsruut. 
