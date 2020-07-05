@@ -49,6 +49,8 @@ var aboutWindow = L.control.about();
 initBasemaps(config.basemaps);
 
 var alguseValikureziim = false;
+// Alguspunkti saab muuta, nupuga "Sea alguspunkt".
+var algusPunkt = 'Vanemuise'; 
 
 // Sea nupukäsitlejad.
 // Abiteave.
@@ -59,7 +61,7 @@ document.querySelector('#Info').onclick = function () {
 
 // Lähtesta marsruut.
 document.querySelector('#Uusnupp').onclick = function () {
-  LahtestaMarsruut();
+  LahtestaMarsruut(algusPunkt);
   document.querySelector('#Teateala')
     .textContent = 'Lähtestatud.';
 }
@@ -84,10 +86,10 @@ document.querySelector('#Tagasinupp').onclick = function () {
 
 var marsruut;
 var pikkus;
-LahtestaMarsruut('Vanemuise');
+LahtestaMarsruut(algusPunkt);
 
 // LahtestaMarsruut eemaldab kõik senised markerid, seab marsruudi alguspunktiks
-// punkti nimega alguspunkt ja kuvad marsruudi jätku kandidaatpunktid.
+// punkti nimega alguspunkt ja kuvab marsruudi jätku kandidaatpunktid.
 function LahtestaMarsruut(alguspunkt) {
   marsruut = [];
   pikkus = [];
@@ -233,11 +235,13 @@ function leiaLoiguPikkus(p1, p2) {
   return undefined;
 }
 
-// alguspunktiValikuKasitleja
+// alguspunktiValikuKasitleja lähtestab marsruudi, seades alguspunktiks klõpsatud
+// markeriga tähistatud punkti.
 function alguspunktiValikuKasitleja(e) {
   console.log("Klõpsatud markerile: " + this.options.title);
   kpn = this.options.title; // Klõpsatud punkti nimi.
-  LahtestaMarsruut(kpn);
+  algusPunkt = kpn;
+  LahtestaMarsruut(algusPunkt);
   alguseValikureziim = false;
 }
 
