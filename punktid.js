@@ -52,7 +52,8 @@ var punktid = [
   { nimi: "Vandjala", loc: [59.433757, 25.082685] },
   { nimi: "Vanemuise", loc: [59.367114, 24.663762] },
   { nimi: "Ääsmäe", loc: [59.239469, 24.496005] },
-  { nimi: "Ülemiste", loc: [59.422315, 24.787937] }
+  { nimi: "Ülemiste", loc: [59.422315, 24.787937] },
+  { nimi: "Kernu", loc: [59.136361, 24.500104] }
 ];
 
 // Koosta punktide mäpp.
