@@ -25,8 +25,8 @@ var loigud = [
   { "a": "Lähtse", "l": "Nabala", "p": 3.2 },
   { "a": "Lähtse", "l": "Paekna", "p": 4.1 },
   { "a": "Lähtse", "l": "Patika", "p": 5.3 },
-  { "a": "Patika", "l": "Vaidasoo (Perila t)", "p": 7.5 },
-  { "a": "Vaidasoo (Perila t)", "l": "Kolu", "p": 3.7 },
+  { "a": "Patika", "l": "Vaidasoo", "p": 7.5 },
+  { "a": "Vaidasoo", "l": "Kolu", "p": 3.7 },
   { "a": "Paekna", "l": "Nabala", "p": 3 },
   { "a": "Paekna", "l": "Tõdva", "p": 5.8 },
   { "a": "Tammemäe", "l": "Saku", "p": 1.3 },
@@ -71,5 +71,11 @@ var loigud = [
   { "a": "Urge", "l": "Kohila", "p": 2.4 },
   { "a": "Kohila", "l": "Kiisa", "p": 9.7 },
   { "a": "Hageri", "l": "Kiisa", "p": 8.8 },
-  { "a": "Hageri", "l": "Kernu", "p": 9.8 }
+  { "a": "Hageri", "l": "Kernu", "p": 9.8 },
+  { "a": "Kose", "l": "Kose rist", "p": 2.4 },
+  { "a": "Äksi", "l": "Kose rist", "p": 7.2 },
+  { "a": "Äksi", "l": "Kolu", "p": 12.6 },
+  { "a": "Kose", "l": "Viskla", "p": 3.0 },
+  { "a": "Pikavere", "l": "Viskla", "p": 10.1 },
+  { "a": "Pikavere", "l": "Vaidasoo", "p": 8.0 }
 ]

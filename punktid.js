@@ -10,6 +10,7 @@ var punktid = [
   { nimi: "Hiiu krg", loc: [59.383413, 24.669578] },
   { nimi: "Aruküla", loc: [59.355826, 25.075276] },
   { nimi: "Assaku", loc: [59.378499, 24.843213] },
+  { nimi: "Viskla", loc: [59.206674, 25.185712] },
   { nimi: "Atla", loc: [59.055638, 24.978444] },
   { nimi: "Habaja", loc: [59.107392, 25.167428] },
   { nimi: "Hageri", loc: [59.159683, 24.649727] },
@@ -22,6 +23,7 @@ var punktid = [
   { nimi: "Kohila", loc: [59.166549, 24.755311] },
   { nimi: "Kolu", loc: [59.190848, 25.044899] },
   { nimi: "Kose", loc: [59.186829, 25.164587] },
+  { nimi: "Kose rist", loc: [59.167044, 25.176373] },
   { nimi: "Kostivere (Aruküla t)", loc: [59.426089, 25.076936] },
   { nimi: "Laagri", loc: [59.351725, 24.610383] },
   { nimi: "Lagedi", loc: [59.402105, 24.941926] },
@@ -35,7 +37,7 @@ var punktid = [
   { nimi: "Paekna", loc: [59.263369, 24.835455] },
   { nimi: "Pajupea", loc: [59.360686, 24.968957] },
   { nimi: "Patika", loc: [59.314128, 24.936979] },
-  { nimi: "Vaidasoo (Perila t)", loc: [59.266643, 25.018228] },
+  { nimi: "Vaidasoo", loc: [59.266643, 25.018228] },
   { nimi: "Pirgu", loc: [59.120919, 24.836574] },
   { nimi: "Saku", loc: [59.300369, 24.650677] },
   { nimi: "Salutaguse", loc: [59.175998, 24.844471] },
@@ -53,6 +55,7 @@ var punktid = [
   { nimi: "Vanemuise", loc: [59.367114, 24.663762] },
   { nimi: "Ääsmäe", loc: [59.239469, 24.496005] },
   { nimi: "Ülemiste", loc: [59.422315, 24.787937] },
+  { nimi: "Äksi", loc: [59.11783, 25.170113] },
   { nimi: "Kernu", loc: [59.136361, 24.500104] }
 ];
 
