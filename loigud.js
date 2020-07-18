@@ -27,6 +27,7 @@ var loigud = [
   { "a": "Lähtse", "l": "Patika", "p": 5.3 },
   { "a": "Patika", "l": "Vaidasoo", "p": 7.5 },
   { "a": "Vaidasoo", "l": "Kolu", "p": 3.7 },
+  { "a": "Vaidasoo", "l": "Aruvalla", "p": 4.0 },
   { "a": "Paekna", "l": "Nabala", "p": 3 },
   { "a": "Paekna", "l": "Tõdva", "p": 5.8 },
   { "a": "Tammemäe", "l": "Saku", "p": 1.3 },
