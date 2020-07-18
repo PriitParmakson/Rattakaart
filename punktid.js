@@ -58,7 +58,7 @@ var punktid = [
   { nimi: "Äksi", loc: [59.11783, 25.170113] },
   { nimi: "Pikavere", loc: [59.276877, 25.133595] },
   { nimi: "Kernu", loc: [59.136361, 24.500104] },
-  { nimi: "Perila", loc: [6573951.23, 566886.84] }
+  { nimi: "Perila", loc: [59.298581, 25.173824] }
 ];
 
 // Koosta punktide mäpp.
