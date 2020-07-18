@@ -77,5 +77,6 @@ var loigud = [
   { "a": "Äksi", "l": "Kolu", "p": 12.6 },
   { "a": "Kose", "l": "Viskla", "p": 3.0 },
   { "a": "Pikavere", "l": "Viskla", "p": 10.1 },
-  { "a": "Pikavere", "l": "Vaidasoo", "p": 8.0 }
+  { "a": "Pikavere", "l": "Vaidasoo", "p": 8.0 },
+  { "a": "Pikavere", "l": "Perila", "p": 3.1 }
 ]

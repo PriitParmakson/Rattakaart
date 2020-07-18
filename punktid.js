@@ -57,7 +57,8 @@ var punktid = [
   { nimi: "Ülemiste", loc: [59.422315, 24.787937] },
   { nimi: "Äksi", loc: [59.11783, 25.170113] },
   { nimi: "Pikavere", loc: [59.276877, 25.133595] },
-  { nimi: "Kernu", loc: [59.136361, 24.500104] }
+  { nimi: "Kernu", loc: [59.136361, 24.500104] },
+  { nimi: "Perila", loc: [6573951.23, 566886.84] }
 ];
 
 // Koosta punktide mäpp.
@@ -75,5 +76,3 @@ punktid.forEach(
     );
   }
 );
-
-
