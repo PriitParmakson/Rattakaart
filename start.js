@@ -111,6 +111,10 @@ document.querySelector('#Tagasinupp').onclick = function () {
   pikkus.pop();
   // Kuva marsruudi tekstiesitus, koos pikkusega.
   kuvaMarsruut();
+  // Kuva nüüdne viimane punkt täis-, mitte kandidaatpunktina.
+  vpn = marsruut[marsruut.length - 1];
+  // Sea viimane punkt läbipaistmatuks.
+  kuvaPunkt(vpn, 1.0, markerOnClick);
   // Leia ja kuva uued kandidaatpunktid.
   kuvaKandidaadid();
   // Kui on jõutud alguspunkti, siis varja tagasivõtmine.
