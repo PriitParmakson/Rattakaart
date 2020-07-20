@@ -107,32 +107,43 @@ document.querySelector('#Tagasinupp').onclick = function () {
   // Viimase punkti nimi.
   vpn = marsruut[marsruut.length - 1];
   console.debug('Eemaldan punkti: ', vpn);
-  // Viimane punkt (selle esitus mäpis pMap).
-  vp = pMap.get(vpn);
-  // Eemalda marker kuvalt.
-  vp.marker.remove();
-  // Sea marker mäpis eemaldatuks.
-  pMap.set(vp.nimi,
-    {
-      nimi: vp.nimi,
-      loc: vp.loc,
-      visible: false,
-      opacity: undefined,
-      marker: undefined
-    }
-  );
   // Eemalda viimane punkt marsruudist.
   marsruut.pop();
   // Eemalda viimase lõigu pikkus.
   pikkus.pop();
+
+  // Eemalda kõik markerid.
+  pMap.forEach(
+    (p) => {
+      if (p.marker) {
+        p.marker.remove();
+        pMap.set(
+          p.nimi,
+          {
+            nimi: p.nimi,
+            loc: p.loc,
+            visible: false,
+            opacity: undefined,
+            marker: undefined
+          }
+        );
+      }
+    }
+  );
+
+  // Taasloo markerid
+  marsruut.forEach(
+    (p) => {
+      kuvaPunkt(p, 1.0, markerOnClick);
+    }
+  );
+
   // Kuva marsruudi tekstiesitus, koos pikkusega.
-  kuvaMarsruut();
-  // Kuva nüüdne viimane punkt täis-, mitte kandidaatpunktina.
-  vpn = marsruut[marsruut.length - 1];
-  // Sea viimane punkt läbipaistmatuks.
-  kuvaPunkt(vpn, 1.0, markerOnClick);
+  kuvaMarsruutTekstina();
+
   // Leia ja kuva uued kandidaatpunktid.
   kuvaKandidaadid();
+
   // Kui on jõutud alguspunkti, siis varja tagasivõtmine.
   if (marsruut.length == 1) {
     document.querySelector('#Tagasinupp').classList.add('disabled');
@@ -169,7 +180,7 @@ function LahtestaMarsruut(alguspunkt) {
   marsruut.push(alguspunkt);
   pikkus.push(0);
   kuvaPunkt(alguspunkt, 1.0, markerOnClick);
-  kuvaMarsruut();
+  kuvaMarsruutTekstina();
   kuvaKandidaadid();
   // Varja tagasivõtmine.
   document.querySelector('#Tagasinupp').classList.add('disabled');
@@ -250,9 +261,9 @@ function kuvaPunkt(nimi, opacity, handler) {
   }
 }
 
-// kuvaMarsruut moodustab massiivis marsruut hoitava marsruudi esituse sõnena, 
+// kuvaMarsruutTekstina moodustab massiivis marsruut hoitava marsruudi esituse sõnena, 
 // arvutab marsruudi pikkuse ja kuvab need HTML-elemendis Marsruut.
-function kuvaMarsruut() {
+function kuvaMarsruutTekstina() {
   var ms = ''; // Marsruut sõnena.
   var p = 0; // Marsruudi pikkus.
   marsruut.forEach(
@@ -358,7 +369,7 @@ function markerOnClick(e) {
   // Kuva punkt marsruudipunktina.
   kuvaPunkt(kpn, 1.0);
   // Kuva marsruudi tekstiesitus, koos pikkusega.
-  kuvaMarsruut();
+  kuvaMarsruutTekstina();
   // Leia ja kuva uued kandidaatpunktid.
   kuvaKandidaadid();
   // Võimalda tagasivõtmine.
