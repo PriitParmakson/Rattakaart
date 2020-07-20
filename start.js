@@ -90,7 +90,7 @@ document.querySelector('#Tagasinupp').onclick = function () {
   }
   // Viimase punkti nimi.
   vpn = marsruut[marsruut.length - 1];
-  console.log('Eemaldan punkti: ', vpn);
+  console.debug('Eemaldan punkti: ', vpn);
   // Viimane punkt (selle esitus mäpis pMap).
   vp = pMap.get(vpn);
   // Eemalda marker kuvalt.
@@ -114,7 +114,9 @@ document.querySelector('#Tagasinupp').onclick = function () {
   // Leia ja kuva uued kandidaatpunktid.
   kuvaKandidaadid();
   // Kui on jõutud alguspunkti, siis varja tagasivõtmine.
-  document.querySelectorAll('#Tagasinupp').classList.add('disabled');
+  if (marsruut.length == 1) {
+    document.querySelector('#Tagasinupp').classList.add('disabled');
+  }
 }
 
 // Lähtesta marsruut.
@@ -150,7 +152,7 @@ function LahtestaMarsruut(alguspunkt) {
   kuvaMarsruut();
   kuvaKandidaadid();
   // Varja tagasivõtmine.
-  document.querySelectorAll('#Tagasinupp')[0].classList.add('disabled');
+  document.querySelector('#Tagasinupp').classList.add('disabled');
 }
 
 // kuvaKandidaadid lisab kaardile markerid kandidaatpunktidele, s.t
@@ -181,7 +183,7 @@ function kuvaKandidaadid() {
 // marsruudi tavalise punkti läbipaistmatus on 1.0.
 // Kolmas parameeter on punkti markerile klõpsamist käsitlev funktsioon.
 function kuvaPunkt(nimi, opacity, handler) {
-  console.log('kuvaPunkt: ', nimi, opacity);
+  console.debug('kuvaPunkt: ', nimi, opacity);
   // Otsi mäpist punkt.
   p = pMap.get(nimi);
   // Toiming on idempotentne: kontrolli, kas marker on juba olemas.
@@ -272,7 +274,7 @@ function leiaLoiguPikkus(p1, p2) {
 // alguspunktiValikuKasitleja lähtestab marsruudi, seades alguspunktiks klõpsatud
 // markeriga tähistatud punkti.
 function alguspunktiValikuKasitleja(e) {
-  console.log("Klõpsatud markerile: " + this.options.title);
+  console.debug("Klõpsatud markerile: " + this.options.title);
   kpn = this.options.title; // Klõpsatud punkti nimi.
   algusPunkt = kpn;
   LahtestaMarsruut(algusPunkt);
@@ -281,7 +283,7 @@ function alguspunktiValikuKasitleja(e) {
 
 // markerOnClick pikendab marsruuti, vastavalt valitud kandidaatpunktile.
 function markerOnClick(e) {
-  console.log("Klõpsatud markerile: " + this.options.title);
+  console.debug("Klõpsatud markerile: " + this.options.title);
   kpn = this.options.title; // Klõpsatud punkti nimi.
   kp = pMap.get(kpn); // Klõpsatud punkt.
   // Kas klõpsati kandidaatpunkti? Klõpsatavad on ka marsruudi punktid
@@ -298,7 +300,7 @@ function markerOnClick(e) {
         // marsruudipunkt, siis sea sellele tagasi marsruudipunkti
         // normaalne läbipaistmatus. Vastasel korral eemalda 
         // kandidaadipunkti marker.
-        console.log('Mittevalitud kandidaadipunkt: ', p.nimi);
+        console.debug('Mittevalitud kandidaadipunkt: ', p.nimi);
         if (punktMarsruudil(p.nimi, marsruut)) {
           // Mittevalitud kandidaadipunkt, on varasemast marsruudil.
           pMap.set(p.nimi,
@@ -340,5 +342,5 @@ function markerOnClick(e) {
   // Leia ja kuva uued kandidaatpunktid.
   kuvaKandidaadid();
   // Võimalda tagasivõtmine.
-  document.querySelectorAll('#Tagasinupp')[0].classList.remove('disabled');
+  document.querySelector('#Tagasinupp').classList.remove('disabled');
 }
