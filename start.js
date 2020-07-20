@@ -61,13 +61,20 @@ var pikkus;
 // Sea nupukäsitlejad.
 // Abiteave.
 document.querySelector('#Info').onclick = function () {
-  document.querySelector('#Teateala')
-    .textContent = 'Vali tegevus ja vajuta markeritele.';
+  ta = document.querySelector('#Teateala');
+  while (ta.firstChild) {
+    ta.removeChild(ta.firstChild);
+  }
+  ta.textContent = 'Vali tegevus ja vajuta markeritele.';
 }
 
 // Lähtekood.
 document.querySelector('#Kood').onclick = function () {
-  document.querySelector('#Teateala').insertAdjacentHTML(
+  ta = document.querySelector('#Teateala');
+  while (ta.firstChild) {
+    ta.removeChild(ta.firstChild);
+  }
+  ta.insertAdjacentHTML(
     'beforeend',
     '<a href="https://github.com/PriitParmakson/Rattakaart" target="_new">' +
     'https://github.com/PriitParmakson/Rattakaart</a>'
@@ -361,3 +368,5 @@ function markerOnClick(e) {
 // Märkmed
 // Using the DOM like a Pro
 // https://itnext.io/using-the-dom-like-a-pro-163a6c552eba
+// DOM tipu eemaldamine
+// https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild

@@ -10,6 +10,11 @@
   color: darkslategrey;
 }
 
+#Nupuala {
+  display: flex; /* Flexbox */
+  align-items: center;
+}
+
 #map {
 	position: absolute;
 	top: 100px;
