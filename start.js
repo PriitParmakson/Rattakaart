@@ -150,7 +150,7 @@ function LahtestaMarsruut(alguspunkt) {
   kuvaMarsruut();
   kuvaKandidaadid();
   // Varja tagasivõtmine.
-  document.querySelectorAll('#Tagasinupp').classList.add('disabled');
+  document.querySelectorAll('#Tagasinupp')[0].classList.add('disabled');
 }
 
 // kuvaKandidaadid lisab kaardile markerid kandidaatpunktidele, s.t
@@ -340,5 +340,5 @@ function markerOnClick(e) {
   // Leia ja kuva uued kandidaatpunktid.
   kuvaKandidaadid();
   // Võimalda tagasivõtmine.
-  document.querySelectorAll('#Tagasinupp').classList.remove('disabled');
+  document.querySelectorAll('#Tagasinupp')[0].classList.remove('disabled');
 }
