@@ -16,6 +16,7 @@ var loigud = [
   { "a": "Vanemuise", "l": "Männiku t", "p": 4 },
   { "a": "Vanemuise", "l": "Männiku krg", "p": 5.2 },
   { "a": "Männiku krg", "l": "Tammemäe", "p": 5.9 },
+  { "a": "Männiku krg", "l": "Männiku t", "p": 1.1 },
   { "a": "Männiku t", "l": "Kangru t", "p": 4.7 },
   { "a": "Kangru t", "l": "Kiili", "p": 7 },
   { "a": "Kangru t", "l": "Sausti", "p": 4 },

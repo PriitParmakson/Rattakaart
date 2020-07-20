@@ -1,4 +1,5 @@
 // Aluskaardi tailid on L-EST'97s. seadistame kaardi.
+// crs on "koordinaatsüsteem".
 var crs = new L.Proj.CRS(
   'EPSG:3301',
   '+proj=lcc +lat_1=59.33333333333334 +lat_2=58 +lat_0=57.51755393055556 ' +
@@ -50,7 +51,12 @@ initBasemaps(config.basemaps);
 
 var alguseValikureziim = false;
 // Alguspunkti saab muuta, nupuga "Sea alguspunkt".
-var algusPunkt = 'Vanemuise'; 
+var algusPunkt = 'Vanemuise';
+
+// marsruut on punktinimede massiiv.
+var marsruut;
+// pikkus on massiiv marsruuti moodustavate lõikude pikkustest. 
+var pikkus;
 
 // Sea nupukäsitlejad.
 // Abiteave.
@@ -77,15 +83,40 @@ document.querySelector('#Algusnupp').onclick = function () {
   );
 }
 
-/* / Samm tagasi.
+// Samm tagasi.
 document.querySelector('#Tagasinupp').onclick = function () {
+  if (marsruut.length == 1) {
+    return;
+  }
+  // Viimase punkti nimi.
+  vpn = marsruut[marsruut.length - 1];
+  console.log('Eemaldan punkti: ', vpn);
+  // Viimane punkt (selle esitus mäpis pMap).
+  vp = pMap.get(vpn);
+  // Eemalda marker kuvalt.
+  vp.marker.remove();
+  // Sea marker mäpis eemaldatuks.
+  pMap.set(vp.nimi,
+    {
+      nimi: vp.nimi,
+      loc: vp.loc,
+      visible: false,
+      opacity: undefined,
+      marker: undefined
+    }
+  );
+  // Eemalda viimane punkt marsruudist.
   marsruut.pop();
-} */
+  // Eemalda viimase lõigu pikkus.
+  pikkus.pop();
+  // Kuva marsruudi tekstiesitus, koos pikkusega.
+  kuvaMarsruut();
+  // Leia ja kuva uued kandidaatpunktid.
+  kuvaKandidaadid();
+
+}
 
 // Lähtesta marsruut.
-
-var marsruut;
-var pikkus;
 LahtestaMarsruut(algusPunkt);
 
 // LahtestaMarsruut eemaldab kõik senised markerid, seab marsruudi alguspunktiks
@@ -194,8 +225,8 @@ function kuvaPunkt(nimi, opacity, handler) {
   }
 }
 
-// kuvaMarsruut moodustab massiivis marsruut hoitava marsruudi esituse sõnena ja
-// kuva selle HTML-elemendis Marsruut.
+// kuvaMarsruut moodustab massiivis marsruut hoitava marsruudi esituse sõnena, 
+// arvutab marsruudi pikkuse ja kuvab need HTML-elemendis Marsruut.
 function kuvaMarsruut() {
   var ms = ''; // Marsruut sõnena.
   var p = 0; // Marsruudi pikkus.
@@ -245,9 +276,8 @@ function alguspunktiValikuKasitleja(e) {
   alguseValikureziim = false;
 }
 
-// markerOnClick
+// markerOnClick pikendab marsruuti, vastavalt valitud kandidaatpunktile.
 function markerOnClick(e) {
-  // console.log("hi. you clicked the marker at " + e.latlng);
   console.log("Klõpsatud markerile: " + this.options.title);
   kpn = this.options.title; // Klõpsatud punkti nimi.
   kp = pMap.get(kpn); // Klõpsatud punkt.
@@ -302,6 +332,7 @@ function markerOnClick(e) {
   marsruut.push(kpn);
   // Kuva punkt marsruudipunktina.
   kuvaPunkt(kpn, 1.0);
+  // Kuva marsruudi tekstiesitus, koos pikkusega.
   kuvaMarsruut();
   // Leia ja kuva uued kandidaatpunktid.
   kuvaKandidaadid();
