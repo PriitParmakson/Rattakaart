@@ -7,6 +7,7 @@
   z-index: 1;
   background-color: white;
   padding: 0 1rem;
+  color: darkslategrey;
 }
 
 #map {
@@ -127,7 +128,6 @@ text.value {
     fill-opacity: .9;
 }
 
-
 .leaflet-control-about-toggle {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -224,7 +224,6 @@ a.leaflet-control-about-close:hover {
 
 .ikoon { font-family: 'Material Icons';
   font-size: 48px;
-  color: darkslategrey;
 }
 
 /* Nupud */
