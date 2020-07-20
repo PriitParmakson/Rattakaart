@@ -65,6 +65,15 @@ document.querySelector('#Info').onclick = function () {
     .textContent = 'Vali tegevus ja vajuta markeritele.';
 }
 
+// Lähtekood.
+document.querySelector('#Kood').onclick = function () {
+  document.querySelector('#Teateala').insertAdjacentHTML(
+    'beforeend',
+    '<a href="https://github.com/PriitParmakson/Rattakaart" target="_new">' +
+    'https://github.com/PriitParmakson/Rattakaart</a>'
+  );
+}
+
 // Lähtesta marsruut.
 document.querySelector('#Uusnupp').onclick = function () {
   LahtestaMarsruut(algusPunkt);
@@ -348,3 +357,7 @@ function markerOnClick(e) {
   // Võimalda tagasivõtmine.
   document.querySelector('#Tagasinupp').classList.remove('disabled');
 }
+
+// Märkmed
+// Using the DOM like a Pro
+// https://itnext.io/using-the-dom-like-a-pro-163a6c552eba
