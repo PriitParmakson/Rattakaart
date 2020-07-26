@@ -1,5 +1,6 @@
 // Määratle punktid.
 var punktid = [
+  { nimi: "Alu (kerglt)", loc: [59.02005, 24.777976] },
   { nimi: "Kaberneeme", loc: [59.513032, 25.269047] },
   { nimi: "Valkla t", loc: [59.467443, 25.313982] },
   { nimi: "Kaberla", loc: [59.465066, 25.240145] },
@@ -18,9 +19,11 @@ var punktid = [
   { nimi: "Kadaka", loc: [59.394910, 24.965664] },
   { nimi: "Kangru t", loc: [59.353735, 24.772968] },
   { nimi: "Kasemetsa", loc: [59.274961, 24.675340] },
+  { nimi: "Kernu", loc: [59.136361, 24.500104] },
   { nimi: "Kiili", loc: [59.309211, 24.834239] },
   { nimi: "Kiisa", loc: [59.232187, 24.680590] },
   { nimi: "Kohila", loc: [59.166549, 24.755311] },
+  { nimi: "Kodila teerist", loc: [59.02411, 24.681495] },
   { nimi: "Kolu", loc: [59.190848, 25.044899] },
   { nimi: "Kose", loc: [59.186829, 25.164587] },
   { nimi: "Kose rist", loc: [59.167044, 25.176373] },
@@ -37,12 +40,14 @@ var punktid = [
   { nimi: "Paekna", loc: [59.263369, 24.835455] },
   { nimi: "Pajupea", loc: [59.360686, 24.968957] },
   { nimi: "Patika", loc: [59.314128, 24.936979] },
-  { nimi: "Vaidasoo", loc: [59.266643, 25.018228] },
+  { nimi: "Perila", loc: [59.298581, 25.173824] },
+  { nimi: "Pikavere", loc: [59.276877, 25.133595] },
   { nimi: "Pirgu", loc: [59.120919, 24.836574] },
+  { nimi: "Rapla (Juuru tee)", loc: [58.989974, 24.836282] },
   { nimi: "Saku", loc: [59.300369, 24.650677] },
   { nimi: "Salutaguse", loc: [59.175998, 24.844471] },
-  { nimi: "Saue", loc: [59.324025, 24.546217] },
   { nimi: "Saula", loc: [59.236196, 25.022459] },
+  { nimi: "Saue", loc: [59.324025, 24.546217] },
   { nimi: "Sausti", loc: [59.318857, 24.764772] },
   { nimi: "Suuresta", loc: [59.295383, 24.958954] },
   { nimi: "Tammemäe", loc: [59.316427, 24.685761] },
@@ -51,14 +56,12 @@ var punktid = [
   { nimi: "Tõdva", loc: [59.268997, 24.740713] },
   { nimi: "Urge", loc: [59.181089, 24.781459] },
   { nimi: "Vaida", loc: [59.286001, 24.975690] },
+  { nimi: "Vaidasoo", loc: [59.266643, 25.018228] },
   { nimi: "Vandjala", loc: [59.433757, 25.082685] },
   { nimi: "Vanemuise", loc: [59.367114, 24.663762] },
-  { nimi: "Ääsmäe", loc: [59.239469, 24.496005] },
-  { nimi: "Ülemiste", loc: [59.422315, 24.787937] },
   { nimi: "Äksi", loc: [59.11783, 25.170113] },
-  { nimi: "Pikavere", loc: [59.276877, 25.133595] },
-  { nimi: "Kernu", loc: [59.136361, 24.500104] },
-  { nimi: "Perila", loc: [59.298581, 25.173824] }
+  { nimi: "Ääsmäe", loc: [59.239469, 24.496005] },
+  { nimi: "Ülemiste", loc: [59.422315, 24.787937] }
 ];
 
 // Koosta punktide mäpp.
