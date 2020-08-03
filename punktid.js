@@ -70,10 +70,10 @@ var punktid = [
 var pMap = new Map();
 punktid.forEach(
   (p) => {
-    pMap.set(p.Nimi,
+    pMap.set(p.nimi,
       {
-        "nimi": p.Nimi,
-        "loc": p.Loc,
+        "nimi": p.nimi,
+        "loc": p.loc,
         visible: false,
         opacity: undefined,
         marker: undefined
