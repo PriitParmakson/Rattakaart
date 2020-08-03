@@ -51,12 +51,14 @@ initBasemaps(config.basemaps);
 
 var alguseValikureziim = false;
 // Alguspunkti saab muuta, nupuga "Sea alguspunkt".
-var algusPunkt = 'Vanemuise';
+var alguspunkt = 'Vanemuise';
 
 // marsruut on punktinimede massiiv.
 var marsruut;
 // pikkus on massiiv marsruuti moodustavate lõikude pikkustest. 
 var pikkus;
+// marsruudiJoon on Leaflet Polyline objekt, hoiab marsruudi joonkuju.
+var marsruudiJoon;
 
 // Sea nupukäsitlejad.
 // Abiteave.
@@ -83,7 +85,7 @@ document.querySelector('#Kood').onclick = function () {
 
 // Lähtesta marsruut.
 document.querySelector('#Uusnupp').onclick = function () {
-  LahtestaMarsruut(algusPunkt);
+  LahtestaMarsruut(alguspunkt);
   document.querySelector('#Teateala')
     .textContent = 'Lähtestatud.';
 }
@@ -150,8 +152,13 @@ document.querySelector('#Tagasinupp').onclick = function () {
   }
 }
 
+// Joonista marsruut
+document.querySelector('#Joonistanupp').onclick = function () {
+  joonistaMarsruut();
+}
+
 // Lähtesta marsruut.
-LahtestaMarsruut(algusPunkt);
+LahtestaMarsruut(alguspunkt);
 
 // LahtestaMarsruut eemaldab kõik senised markerid, seab marsruudi alguspunktiks
 // punkti nimega alguspunkt ja kuvab marsruudi jätku kandidaatpunktid.
@@ -176,11 +183,17 @@ function LahtestaMarsruut(alguspunkt) {
       }
     }
   );
+  // Eemalda marsruudijoon, kui see eksisteerib.
+  if (marsruudiJoon) {
+    marsruudiJoon.remove();
+  }
   // Sea marsruudi alguspunktiks alguspunkt.
   marsruut.push(alguspunkt);
   pikkus.push(0);
   kuvaPunkt(alguspunkt, 1.0, markerOnClick);
   kuvaMarsruutTekstina();
+  // Sea ja kuva marsruudijoone alguspunkt.
+  marsruudiJoon = L.polyline([pMap.get(alguspunkt).loc], {color: 'blue'}).addTo(map);
   kuvaKandidaadid();
   // Varja tagasivõtmine.
   document.querySelector('#Tagasinupp').classList.add('disabled');
@@ -307,8 +320,8 @@ function leiaLoiguPikkus(p1, p2) {
 function alguspunktiValikuKasitleja(e) {
   console.debug("Klõpsatud markerile: " + this.options.title);
   kpn = this.options.title; // Klõpsatud punkti nimi.
-  algusPunkt = kpn;
-  LahtestaMarsruut(algusPunkt);
+  alguspunkt = kpn;
+  LahtestaMarsruut(alguspunkt);
   alguseValikureziim = false;
 }
 
@@ -370,14 +383,32 @@ function markerOnClick(e) {
   kuvaPunkt(kpn, 1.0);
   // Kuva marsruudi tekstiesitus, koos pikkusega.
   kuvaMarsruutTekstina();
+  // Pikenda marsruudijoont
+  marsruudiJoon.addLatLng(kp.loc);
   // Leia ja kuva uued kandidaatpunktid.
   kuvaKandidaadid();
   // Võimalda tagasivõtmine.
   document.querySelector('#Tagasinupp').classList.remove('disabled');
 }
 
+// joonistaMarsruut
+function joonistaMarsruut() {
+  var latlngs = [];
+  marsruut.forEach(
+    (mp, i) => { // Marsruudipunkt (nimi)
+      latlngs.push(pMap.get(mp).loc);
+    }
+  )
+  marsruudiJoon = L.polyline(latlngs, {color: 'red'}).addTo(map);
+  // alert("latlngs koostatud");
+}
+
 // Märkmed
+// Leaflet Polyline
+// https://leafletjs.com/reference-1.6.0.html#polyline
+
 // Using the DOM like a Pro
 // https://itnext.io/using-the-dom-like-a-pro-163a6c552eba
+
 // DOM tipu eemaldamine
 // https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
