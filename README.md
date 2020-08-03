@@ -3,7 +3,7 @@
 Veebirakendus võimaldab kaardil klikkides etteantud punktidest koostada erinevaid 
 marsruute. Rakendus arvutab marsruudi pikkuse.
 
-Kasutamine: `https://priitparmakson.github.io/Rattakaart/index.html`
+Kasutamine: [https://priitparmakson.github.io/Rattakaart/index.html](https://priitparmakson.github.io/Rattakaart/index.html)
 
 Punktide ja lõikude lisamine: Täienda faile `punktid.js` ja `loigud.js`.
 Lisanduste kontrollimiseks võib kasutada Go programmi kaustas `check`. Liigu kausta
