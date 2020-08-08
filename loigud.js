@@ -87,5 +87,8 @@ var loigud = [
   { "a": "Pikavere", "l": "Perila", "p": 3.1 },
   { "a": "Ääsmäe", "l": "Kääbastemägi", "p": 5.9 },
   { "a": "Haiba", "l": "Kääbastemägi", "p": 9.6 },
-  { "a": "Haiba", "l": "Kernu", "p": 2.1 }
+  { "a": "Haiba", "l": "Kernu", "p": 2.1 },
+  { "a": "Kodila teerist", "l": "Varbola", "p": 17.7 }
+  { "a": "Riisipere", "l": "Varbola", "p": 12.4 },
+  { "a": "Riisipere", "l": "Haiba", "p": 10.3 }
 ]
