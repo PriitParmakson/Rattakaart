@@ -33,6 +33,8 @@ var loigud = [
   { "a": "Paekna", "l": "Tõdva", "p": 5.8 },
   { "a": "Tammemäe", "l": "Saku", "p": 1.3 },
   { "a": "Saku", "l": "Kasemetsa", "p": 4.7 },
+  { "a": "Laagri (Harku tee ots", "l": "Saku", "p": 8.8 },
+  { "a": "Laagri (Harku tee ots", "l": "Vanemuise", "p": 3.6 },
   { "a": "Kasemetsa", "l": "Tõdva", "p": 2.7 },
   { "a": "Kasemetsa", "l": "Kiisa", "p": 5 },
   { "a": "Kiisa", "l": "Maidla", "p": 8.4 },
