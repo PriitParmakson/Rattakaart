@@ -146,7 +146,7 @@ document.querySelector('#Tagasinupp').onclick = function () {
         marsruudiJoon = L.polyline([pMap.get(alguspunkt).loc], {color: 'blue'}).addTo(map);
       } else { // Edasised punktid.
         // Pikenda marsruudijoont
-        marsruudiJoon.addLatLng(kp.loc);
+        marsruudiJoon.addLatLng(pMap.get(p).loc);
       }
     }
   );
