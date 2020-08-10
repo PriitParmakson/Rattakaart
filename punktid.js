@@ -46,7 +46,7 @@ var punktid = [
   { "nimi": "Pirgu", "loc": [59.120919, 24.836574] },
   { "nimi": "Rapla (Juuru tee)", "loc": [58.989974, 24.836282] },
   { "nimi": "Riisipere", "loc": [59.104763, 24.31268] },
-  { "nimi": "Saku", "loc": [59.300369, 24.650677] },
+  { "nimi": "Saku", "loc": [59.30162, 24.668827] },
   { "nimi": "Saku (Pähklimäe tee)", "loc": [59.300265, 24.650921] },
   { "nimi": "Salutaguse", "loc": [59.175998, 24.844471] },
   { "nimi": "Saue", "loc": [59.324025, 24.546217] },
