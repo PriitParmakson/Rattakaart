@@ -113,6 +113,10 @@ document.querySelector('#Tagasinupp').onclick = function () {
   marsruut.pop();
   // Eemalda viimase lõigu pikkus.
   pikkus.pop();
+  // Eemalda marsruudijoon, kui see eksisteerib.
+  if (marsruudiJoon) {
+    marsruudiJoon.remove();
+  }
 
   // Eemalda kõik markerid.
   pMap.forEach(
@@ -133,10 +137,17 @@ document.querySelector('#Tagasinupp').onclick = function () {
     }
   );
 
-  // Taasloo markerid
+  // Taasloo markerid ja joonista marsruudijoon.
   marsruut.forEach(
-    (p) => {
+    (p, i) => {
       kuvaPunkt(p, 1.0, markerOnClick);
+      if (i == 0) { // Alguspunkt.
+        // Sea ja kuva marsruudijoone alguspunkt.
+        marsruudiJoon = L.polyline([pMap.get(alguspunkt).loc], {color: 'blue'}).addTo(map);
+      } else { // Edasised punktid.
+        // Pikenda marsruudijoont
+        marsruudiJoon.addLatLng(kp.loc);
+      }
     }
   );
 
@@ -150,11 +161,6 @@ document.querySelector('#Tagasinupp').onclick = function () {
   if (marsruut.length == 1) {
     document.querySelector('#Tagasinupp').classList.add('disabled');
   }
-}
-
-// Joonista marsruut
-document.querySelector('#Joonistanupp').onclick = function () {
-  joonistaMarsruut();
 }
 
 // Lähtesta marsruut.
