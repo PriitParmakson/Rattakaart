@@ -50,6 +50,7 @@ var loigud = [
   { "a": "Tuhala", "l": "Saula", "p": 4.1 },
   { "a": "Saula", "l": "Kolu", "p": 5.3 },
   { "a": "Kolu", "l": "Kose", "p": 7 },
+  { "a": "Kolu", "l": "Tade viadukt", "p": 2.5 },
   { "a": "Kolu", "l": "Habaja", "p": 14 },
   { "a": "Assaku", "l": "Jüri", "p": 4.3 },
   { "a": "Jüri", "l": "Pajupea", "p": 4.3 },
