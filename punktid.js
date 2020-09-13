@@ -17,6 +17,7 @@ var punktid = [
   { "nimi": "Kadaka", "loc": [59.394910, 24.965664] },
   { "nimi": "Kangru t", "loc": [59.353735, 24.772968] },
   { "nimi": "Kasemetsa", "loc": [59.274961, 24.675340] },
+  { "nimi": "Keemikute", "loc": [59.47945, 25.015766] },
   { "nimi": "Kernu", "loc": [59.136361, 24.500104] },
   { "nimi": "Kiili", "loc": [59.309211, 24.834239] },
   { "nimi": "Kiisa", "loc": [59.232187, 24.680590] },
@@ -34,6 +35,7 @@ var punktid = [
   { "nimi": "Linnuse t", "loc": [59.458844, 24.905473] },
   { "nimi": "Lähtse", "loc": [59.293522, 24.852573] },
   { "nimi": "Maidla", "loc": [59.209616, 24.575584] },
+  { "nimi": "Muuga tee", "loc": [59.467415, 24.904023] },
   { "nimi": "Männiku krg", "loc": [59.363714, 24.716984] },
   { "nimi": "Männiku t", "loc": [59.375150, 24.717757] },
   { "nimi": "Nabala", "loc": [59.273208, 24.875295] },
@@ -41,10 +43,12 @@ var punktid = [
   { "nimi": "Paekna", "loc": [59.263369, 24.835455] },
   { "nimi": "Pajupea", "loc": [59.360686, 24.968957] },
   { "nimi": "Patika", "loc": [59.314128, 24.936979] },
+  { "nimi": "Peningi", "loc": [59.339585, 25.15239] },
   { "nimi": "Perila", "loc": [59.298581, 25.173824] },
   { "nimi": "Pikavere", "loc": [59.276877, 25.133595] },
   { "nimi": "Pirgu", "loc": [59.120919, 24.836574] },
   { "nimi": "Rapla (Juuru tee)", "loc": [58.989974, 24.836282] },
+  { "nimi": "Rebala", "loc": [59.459856, 25.088637] },
   { "nimi": "Riisipere", "loc": [59.104763, 24.31268] },
   { "nimi": "Saku", "loc": [59.30162, 24.668827] },
   { "nimi": "Saku (Pähklimäe tee)", "loc": [59.300265, 24.650921] },
@@ -68,7 +72,8 @@ var punktid = [
   { "nimi": "Viskla", "loc": [59.206674, 25.185712] },
   { "nimi": "Äksi", "loc": [59.11783, 25.170113] },
   { "nimi": "Ääsmäe", "loc": [59.239469, 24.496005] },
-  { "nimi": "Ülemiste", "loc": [59.422315, 24.787937] }
+  { "nimi": "Ülemiste", "loc": [59.422315, 24.787937] },
+  { "nimi": "Ülgase", "loc": [59.487722, 25.078117] }
 ];
 
 // Koosta punktide mäpp.
