@@ -9,67 +9,67 @@
 
 // Aluskaart.
 var kaarttile = L.tileLayer(
-  'http://tiles.maaamet.ee/tm/s/1.0.0/kaart/{z}/{x}/{-y}.png',
+  'https://tiles.maaamet.ee/tm/tms/1.0.0/kaart/{z}/{x}/{-y}.png',
   {
     minZoom: 0,
     maxZoom: 13,
     continuousWorld: false,
     noWrap: false,
-    attribution: 'Aluskaart: <a href="http://www.maaamet.ee" ' + 
+    attribution: 'Aluskaart: <a href="https://www.maaamet.ee" ' + 
     'target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
   }
 );
 
 var kaartwms = L.tileLayer.wms(
-  'http://kaart.maaamet.ee/wms/kaart',
+  'https://kaart.maaamet.ee/wms/kaart',
   {
     continuousWorld: false,
     layers: 'CORINE,BAASKAART,KAART24,HALDUSPIIRID,TEED,KYLAD,KAART24L',
     minZoom: 14,
     maxZoom: 20,
     version: '1.1.1',
-    attribution: 'Aluskaart: <a href="http://www.maaamet.ee" ' + 
+    attribution: 'Aluskaart: <a href="https://www.maaamet.ee" ' + 
     'target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
   }
 );
 
 // Hübriid (ortofoto + hybriid).
 var hybrid_orthotile = L.tileLayer(
-  'http://tiles.maaamet.ee/tm/s/1.0.0/foto/{z}/{x}/{-y}.png',
+  'https://tiles.maaamet.ee/tm/tms/1.0.0/foto/{z}/{x}/{-y}.png',
   {
     minZoom: 0,
     maxZoom: 13,
     continuousWorld: false,
-    attribution: 'Ortofoto/Hübriidkaart: <a href="http://www.maaamet.ee" ' + 
+    attribution: 'Ortofoto/Hübriidkaart: <a href="https://www.maaamet.ee" ' + 
     'target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
   }
 );
 
 var hybrid_texttile = L.tileLayer(
-  'http://tiles.maaamet.ee/tm/s/1.0.0/hybriid/{z}/{x}/{-y}.png',
+  'https://tiles.maaamet.ee/tm/tms/1.0.0/hybriid/{z}/{x}/{-y}.png',
   {
     minZoom: 0,
     maxZoom: 13,
     continuousWorld: false,
-    attribution: 'Ortofoto/Hübriidkaart: <a href="http://www.maaamet.ee" ' + 
+    attribution: 'Ortofoto/Hübriidkaart: <a href="https://www.maaamet.ee" ' + 
     'target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
   }
 );
 
 var hybrid_orthowms = L.tileLayer.wms(
-  'http://kaart.maaamet.ee/wms/fotokaart',
+  'https://kaart.maaamet.ee/wms/fotokaart',
   {
     layers: 'EESTIFOTO',
     minZoom: 14,
     maxZoom: 20,
     version: '1.1.1',
-    attribution: 'Ortofoto/Hübriidkaart: <a href="http://www.maaamet.ee" ' + 
+    attribution: 'Ortofoto/Hübriidkaart: <a href="https://www.maaamet.ee" ' + 
     'target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
   }
 );
 
 var hybrid_textwms = L.tileLayer.wms(
-  'http://kaart.maaamet.ee/wms/fotokaart',
+  'https://kaart.maaamet.ee/wms/fotokaart',
   {
     layers: 'HYBRID',
     transparent: true,
@@ -77,7 +77,7 @@ var hybrid_textwms = L.tileLayer.wms(
     minZoom: 14,
     maxZoom: 20,
     version: '1.1.1',
-    attribution: 'Ortofoto/Hübriidkaart: <a href="http://www.maaamet.ee" ' + 
+    attribution: 'Ortofoto/Hübriidkaart: <a href="https://www.maaamet.ee" ' + 
     'target="_blank" rel="noopener noreferrer">Maa-Amet</a>'
   }
 );
