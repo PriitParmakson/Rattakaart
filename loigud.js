@@ -18,6 +18,7 @@ var loigud = [
   { "a": "Lagedi", "l": "Lagedi (Kostivere tee)", "p": 1.6 },
   { "a": "Assaku", "l": "Lagedi", "p": 10.2 },
   { "a": "Harku", "l": "Laagri", "p": 5.3 },
+  { "a": "Harku", "l": "Hiiu krg", "p": 5.4 },
   { "a": "Astangu", "l": "Harku", "p": 4.3 },
   { "a": "Astangu", "l": "Haabersti", "p": 4.0 },
   { "a": "Hiiu krg", "l": "Astangu", "p": 5.2 },
