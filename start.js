@@ -50,15 +50,18 @@ var aboutWindow = L.control.about();
 initBasemaps(config.basemaps);
 
 var alguseValikureziim = false;
-// Alguspunkti saab muuta, nupuga "Sea alguspunkt".
-var alguspunkt = 'Vanemuise';
+var koikLoigudReziim = false;
 
-// marsruut on punktinimede massiiv.
-var marsruut;
-// pikkus on massiiv marsruuti moodustavate lõikude pikkustest. 
-var pikkus;
-// marsruudiJoon on Leaflet Polyline objekt, hoiab marsruudi joonkuju.
-var marsruudiJoon;
+var alguspunkt = 'Vanemuise';  // Alguspunkti saab muuta, nupuga "Sea alguspunkt".
+
+var marsruut;  // marsruut on punktinimede massiiv.
+
+var pikkus;  // pikkus on massiiv marsruuti moodustavate lõikude pikkustest. 
+
+var marsruudiJoon;  // marsruudiJoon on Leaflet Polyline objekt, hoiab marsruudi joonkuju.
+
+var koikLoigud = [];  // koikLoigud hoiab 'Kuva kõik lõigud' lõike esitavaid Leaflet
+// PolyLine objekte - selleks, et neid saaks hiljem eemaldada.
 
 // Sea nupukäsitlejad.
 // Abiteave.
@@ -81,6 +84,44 @@ document.querySelector('#Kood').onclick = function () {
     '<a href="https://github.com/PriitParmakson/Rattakaart" target="_new">' +
     'https://github.com/PriitParmakson/Rattakaart</a>'
   );
+}
+
+// Kuva kõik marsruudid.
+document.querySelector('#Koik').onclick = function () {
+  if (koikLoigudReziim) { // Lülita 'Kuva kõik lõigud' välja. 
+    koikLoigudReziim = false;
+    // Eemalda Leaflet PolyLine objektid.
+    koikLoigud.forEach(
+      (lo) => {
+        lo.remove();
+      }
+    );
+    koikLoigud = [];
+    LahtestaMarsruut(alguspunkt);
+    return
+  }
+  // Lülita 'Kuva kõik lõigud' sisse.
+  LahtestaMarsruut(alguspunkt);
+  // Kuva markerid kõigile punktidele.
+  pMap.forEach(
+    (p) => {
+      kuvaPunkt(p.nimi, 1.0, alguspunktiValikuKasitleja);
+    }
+  );
+  // Kuva kõik lõigud.
+  loigud.forEach(
+    (lo) => {
+      loiguJoon = L.polyline(
+        [
+          // Lõigu otspunktinimede alusel leia punktide mäpist otspunktide koordinaadid.
+          pMap.get(lo.a).loc,
+          pMap.get(lo.l).loc
+        ],
+        {color: 'blue'}).addTo(map);
+        koikLoigud.push(loiguJoon);
+    }
+  );
+  koikLoigudReziim = true;
 }
 
 // Lähtesta marsruut.
@@ -397,7 +438,8 @@ function markerOnClick(e) {
   document.querySelector('#Tagasinupp').classList.remove('disabled');
 }
 
-// joonistaMarsruut
+// joonistaMarsruut koostab punktinimede massiivist (marsruut) geoasukohtade massiivi
+// (latlngs) ja viimasest omakorda Leaflet Polyline objekti (marsruudijoon) ning kuvab joone.
 function joonistaMarsruut() {
   var latlngs = [];
   marsruut.forEach(
