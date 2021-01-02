@@ -64,6 +64,7 @@ var koikLoigud = [];  // koikLoigud hoiab 'Kuva kõik lõigud' lõike esitavaid 
 // PolyLine objekte - selleks, et neid saaks hiljem eemaldada.
 
 // Sea nupukäsitlejad.
+
 // Abiteave.
 document.querySelector('#Info').onclick = function () {
   ta = document.querySelector('#Teateala');
@@ -105,7 +106,7 @@ document.querySelector('#Koik').onclick = function () {
   // Kuva markerid kõigile punktidele.
   pMap.forEach(
     (p) => {
-      kuvaPunkt(p.nimi, 1.0, alguspunktiValikuKasitleja);
+      kuvaPunkt(p.nimi, 0.5, alguspunktiValikuKasitleja);
     }
   );
   // Kuva kõik lõigud.
@@ -117,8 +118,15 @@ document.querySelector('#Koik').onclick = function () {
           pMap.get(lo.a).loc,
           pMap.get(lo.l).loc
         ],
-        {color: 'blue'}).addTo(map);
-        koikLoigud.push(loiguJoon);
+        {
+          color: 'tomato',
+          weight: 10,
+          opacity: 0.3
+        });
+      // Koosta vihjetekst.  
+      loiguJoon.bindTooltip(String(lo.p) + " km");
+      loiguJoon.addTo(map);
+      koikLoigud.push(loiguJoon);
     }
   );
   koikLoigudReziim = true;
@@ -137,7 +145,7 @@ document.querySelector('#Algusnupp').onclick = function () {
   // Kuva markerid kõigile punktidele.
   pMap.forEach(
     (p) => {
-      kuvaPunkt(p.nimi, 1.0, alguspunktiValikuKasitleja);
+      kuvaPunkt(p.nimi, 0.5, alguspunktiValikuKasitleja);
     }
   );
 }
@@ -184,7 +192,7 @@ document.querySelector('#Tagasinupp').onclick = function () {
       kuvaPunkt(p, 1.0, markerOnClick);
       if (i == 0) { // Alguspunkt.
         // Sea ja kuva marsruudijoone alguspunkt.
-        marsruudiJoon = L.polyline([pMap.get(alguspunkt).loc], {color: 'blue'}).addTo(map);
+        marsruudiJoon = L.polyline([pMap.get(alguspunkt).loc], { color: 'blue' }).addTo(map);
       } else { // Edasised punktid.
         // Pikenda marsruudijoont
         marsruudiJoon.addLatLng(pMap.get(p).loc);
@@ -240,7 +248,7 @@ function LahtestaMarsruut(alguspunkt) {
   kuvaPunkt(alguspunkt, 1.0, markerOnClick);
   kuvaMarsruutTekstina();
   // Sea ja kuva marsruudijoone alguspunkt.
-  marsruudiJoon = L.polyline([pMap.get(alguspunkt).loc], {color: 'blue'}).addTo(map);
+  marsruudiJoon = L.polyline([pMap.get(alguspunkt).loc], { color: 'blue' }).addTo(map);
   kuvaKandidaadid();
   // Varja tagasivõtmine.
   document.querySelector('#Tagasinupp').classList.add('disabled');
@@ -272,29 +280,32 @@ function kuvaKandidaadid() {
 // Kui marker on juba olemas, siis muudab ainult läbipaistmatust.
 // Teise parameetrina anda läbipaistmatus. Kandidaadi läbipaistmatus on 0.5;
 // marsruudi tavalise punkti läbipaistmatus on 1.0.
-// Kolmas parameeter on punkti markerile klõpsamist käsitlev funktsioon.
+// Kolmas parameeter on punkti markerile klõpsamist käsitlev funktsioon. Kui markerile on juba
+// varem lisatud käsitlev f-n, siis see see asendatatakse. 
 function kuvaPunkt(nimi, opacity, handler) {
   console.debug('kuvaPunkt: ', nimi, opacity);
   // Otsi mäpist punkt.
   p = pMap.get(nimi);
-  // Toiming on idempotentne: kontrolli, kas marker on juba olemas.
+  // Kontrolli, kas marker on juba olemas.
   if (p.visible) {
-    if (p.opacity == opacity) {
-      return
-    } else {
-      // Muuda ainult läbipaistmatust.
-      p.marker.setOpacity(opacity);
-      // Märgi markeri loomine või muutmine mäpis pMap.
-      pMap.set(nimi,
-        {
-          nimi: p.nimi,
-          loc: p.loc,
-          visible: true,
-          opacity: opacity,
-          marker: p.marker
-        }
-      );
-    }
+    // Järgmised toimingud on idempotentsed.
+    // Muuda läbipaistmatust.
+    p.marker.setOpacity(opacity);
+    // Eemalda võimalikud eelmised käsitlejad.
+    p.marker.off();
+    console.log("Eemaldan eelmised käsitlejad: " + nimi);
+    // Lisa markerivajutuse käsitleja.
+    p.marker.on('click', handler);
+    // Märgi markeri loomine või muutmine mäpis pMap.
+    pMap.set(nimi,
+      {
+        nimi: p.nimi,
+        loc: p.loc,
+        visible: true,
+        opacity: opacity,
+        marker: p.marker
+      }
+    );
   } else {
     // Defineeri marker.
     var m = L.marker(
@@ -365,9 +376,9 @@ function leiaLoiguPikkus(p1, p2) {
 // alguspunktiValikuKasitleja lähtestab marsruudi, seades alguspunktiks klõpsatud
 // markeriga tähistatud punkti.
 function alguspunktiValikuKasitleja(e) {
-  console.debug("Klõpsatud markerile: " + this.options.title);
   kpn = this.options.title; // Klõpsatud punkti nimi.
   alguspunkt = kpn;
+  console.debug("Alguspunktiks seatud: " + alguspunkt);
   LahtestaMarsruut(alguspunkt);
   alguseValikureziim = false;
 }
@@ -447,11 +458,17 @@ function joonistaMarsruut() {
       latlngs.push(pMap.get(mp).loc);
     }
   )
-  marsruudiJoon = L.polyline(latlngs, {color: 'red'}).addTo(map);
+  marsruudiJoon = L.polyline(latlngs, { color: 'red' }).addTo(map);
   // alert("latlngs koostatud");
 }
 
 // Märkmed
+// Markeri lisamine kaardile klõpsamisega
+// https://stackoverflow.com/questions/9912145/leaflet-how-to-find-existing-markers-and-delete-markers
+
+// Käsitlejate eemaldamine - küsitav
+// https://stackoverflow.com/questions/10324857/how-do-you-use-the-off-event-method-in-leaflet-js
+
 // Leaflet Polyline
 // https://leafletjs.com/reference-1.6.0.html#polyline
 
