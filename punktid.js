@@ -51,6 +51,7 @@ var punktid = [
   { "nimi": "Peningi", "loc": [59.339585, 25.15239] },
   { "nimi": "Perila", "loc": [59.298581, 25.173824] },
   { "nimi": "Pikavere", "loc": [59.276877, 25.133595] },
+  { "nimi": "Pikaripoe", "loc": [59.182091, 25.116209] },
   { "nimi": "Pirgu", "loc": [59.120919, 24.836574] },
   { "nimi": "Rannamõisa", "loc": [59.438554, 24.500163] },
   { "nimi": "Rapla (Juuru tee)", "loc": [58.989974, 24.836282] },
