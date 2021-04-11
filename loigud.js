@@ -4,6 +4,7 @@ var loigud = [
   { "a": "Kaberla", "l": "Valkla t", "p": 4.4 },
   { "a": "Kadaka", "l": "Lagedi", "p": 1.7 },
   { "a": "Keila", "l": "Keila-Joa", "p": 13.5 },
+  { "a": "Keila sild", "l": "Tutermaa (Vanamõisa t ots)", "p": 3.9 },
   { "a": "Keila-Joa", "l": "Vääna", "p": 7.2 },
   { "a": "Nehatu", "l": "Lagedi", "p": 5.2 },
   { "a": "Nehatu", "l": "Jõelähtme", "p": 12.7 },
@@ -126,5 +127,7 @@ var loigud = [
   { "a": "Viti", "l": "Rannamõisa", "p": 7.7 },
   { "a": "Rannamõisa", "l": "Haabersti", "p": 9.3 },
   { "a": "Haabersti", "l": "Harku", "p": 5.4 },
+  { "a": "Vanamõisa", "l": "Koidu ring", "p": 3.9 },
+  { "a": "Vanamõisa", "l": "Tutermaa (Vanamõisa t ots)", "p": 4.1 },
   { "a": "Riisipere", "l": "Haiba", "p": 10.3 }
 ]
