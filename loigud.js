@@ -54,6 +54,7 @@ var loigud = [
   { "a": "Laagri (Harku tee ots)", "l": "Vanemuise", "p": 3.6 },
   { "a": "Laagri (Harku tee ots)", "l": "Laagri", "p": 1.0 },
   { "a": "Laagri (Harku tee ots)", "l": "Juuliku", "p": 5.8 },
+  { "a": "Laagri", "l": "Koidu ring", "p": 2.0 },
   { "a": "Kanama", "l": "Juuliku", "p": 4.3 },
   { "a": "Kanama", "l": "Jõgisoo", "p": 3.9 },
   { "a": "Valingu", "l": "Jõgisoo", "p": 5.1 },
