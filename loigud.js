@@ -4,6 +4,7 @@ var loigud = [
   { "a": "Kaberla", "l": "Valkla t", "p": 4.4 },
   { "a": "Kadaka", "l": "Lagedi", "p": 1.7 },
   { "a": "Keila", "l": "Keila-Joa", "p": 13.5 },
+  { "a": "Keila", "l": "Keila sild", "p": 0.8 },
   { "a": "Keila sild", "l": "Tutermaa (Vanamõisa t ots)", "p": 3.9 },
   { "a": "Keila-Joa", "l": "Vääna", "p": 7.2 },
   { "a": "Nehatu", "l": "Lagedi", "p": 5.2 },
