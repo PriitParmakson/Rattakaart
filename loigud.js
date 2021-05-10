@@ -37,7 +37,7 @@ var loigud = [
   { "a": "Kiili", "l": "Lähtse", "p": 2 },
   { "a": "Lähtse", "l": "Nabala", "p": 3.2 },
   { "a": "Lähtse", "l": "Paekna", "p": 4.1 },
-  { "a": "Lähtse", "l": "Patika", "p": 5.3 },
+  { "a": "Lähtse", "l": "Patika", "p": 6.8 },
   { "a": "Nabala", "l": "Patika", "p": 7.7 },
   { "a": "Patika", "l": "Vaidasoo", "p": 7.5 },
   { "a": "Peningi", "l": "Perila", "p": 4.8 },
