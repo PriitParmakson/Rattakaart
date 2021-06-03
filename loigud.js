@@ -92,6 +92,7 @@ var loigud = [
   { "a": "Kostivere (Aruküla t)", "l": "Linnuse t", "p": 12.4 },
   { "a": "Linnuse t", "l": "Ülemiste", "p": 10.5 },
   { "a": "Ülemiste", "l": "Vanemuise", "p": 13.4 },
+  { "a": "Ülemiste", "l": "Männiku krg", "p": 7.4 },
   { "a": "Maidla", "l": "Ääsmäe", "p": 6.1 },
   { "a": "Ääsmäe", "l": "Saue", "p": 11.9 },
   { "a": "Saue", "l": "Laagri", "p": 5.7 },
