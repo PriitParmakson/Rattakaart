@@ -1,5 +1,6 @@
 // Määratle punktid.
 var punktid = [
+  { "nimi": "Alliku-Püha teerist", "loc": [59.34191, 24.555603] },
   { "nimi": "Alu (kerglt)", "loc": [59.02005, 24.777976] },
   { "nimi": "Aruküla", "loc": [59.355826, 25.075276] },
   { "nimi": "Astangu", "loc": [59.40654, 24.646675] },
@@ -11,6 +12,7 @@ var punktid = [
   { "nimi": "Haiba", "loc": [59.128299, 24.471917] },
   { "nimi": "Hageri", "loc": [59.159683, 24.649727] },
   { "nimi": "Hiiu krg", "loc": [59.383413, 24.669578] },
+  { "nimi": "Hüüru", "loc": [59.37905, 24.538839] },
   { "nimi": "Juuliku", "loc": [59.308757, 24.632756] },
   { "nimi": "Jõelähtme", "loc": [59.442044, 25.135965] },
   { "nimi": "Jõgisoo", "loc": [59.285276, 24.521525] },
@@ -57,6 +59,7 @@ var punktid = [
   { "nimi": "Perila", "loc": [59.298581, 25.173824] },
   { "nimi": "Pikavere", "loc": [59.276877, 25.133595] },
   { "nimi": "Pikaripoe", "loc": [59.182091, 25.116209] },
+  { "nimi": "Püha", "loc": [59.365936, 24.511109] },
   { "nimi": "Rannamõisa", "loc": [59.438554, 24.500163] },
   { "nimi": "Rapla (Juuru tee)", "loc": [58.989974, 24.836282] },
   { "nimi": "Rebala", "loc": [59.459856, 25.088637] },

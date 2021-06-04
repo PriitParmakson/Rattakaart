@@ -135,6 +135,11 @@ var loigud = [
   { "a": "Rannamõisa", "l": "Haabersti", "p": 9.3 },
   { "a": "Haabersti", "l": "Harku", "p": 5.4 },
   { "a": "Vanamõisa", "l": "Koidu ring", "p": 3.9 },
+  { "a": "Vanamõisa", "l": "Saue", "p": 0.8 },
+  { "a": "Vanamõisa", "l": "Alliku-Püha teerist", "p": 1.3 },
+  { "a": "Püha", "l": "Alliku-Püha teerist", "p": 4.2 },
+  { "a": "Hüüru", "l": "Alliku-Püha teerist", "p": 4.5 },
+  { "a": "Hüüru", "l": "Harku", "p": 3.0 },
   { "a": "Vanamõisa", "l": "Tutermaa (Vanamõisa t ots)", "p": 4.1 },
   { "a": "Riisipere", "l": "Haiba", "p": 10.3 }
 ]
