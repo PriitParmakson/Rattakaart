@@ -131,6 +131,7 @@ var loigud = [
   { "a": "Kodila teerist", "l": "Varbola", "p": 17.7 },
   { "a": "Riisipere", "l": "Varbola", "p": 12.4 },
   { "a": "Vääna", "l": "Viti", "p": 7.6 },
+  { "a": "Vääna", "l": "Püha", "p": 7.1 },
   { "a": "Viti", "l": "Rannamõisa", "p": 7.7 },
   { "a": "Rannamõisa", "l": "Haabersti", "p": 9.3 },
   { "a": "Haabersti", "l": "Harku", "p": 5.4 },
