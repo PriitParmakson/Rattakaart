@@ -143,5 +143,8 @@ var loigud = [
   { "a": "Hüüru", "l": "Alliku-Püha teerist", "p": 4.5 },
   { "a": "Hüüru", "l": "Harku", "p": 3.0 },
   { "a": "Vanamõisa", "l": "Tutermaa (Vanamõisa t ots)", "p": 4.1 },
+  { "a": "Jõeveere teeots", "l": "Alliku-Püha teerist", "p": 2.3 },
+  { "a": "Jõeveere teeots", "l": "Koidu ring", "p": 3.2 },
+  { "a": "Jõeveere teeots", "l": "Hüüru", "p": 2.3 },
   { "a": "Riisipere", "l": "Haiba", "p": 10.3 }
 ]
