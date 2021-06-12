@@ -61,7 +61,7 @@ var loigud = [
   { "a": "Kanama", "l": "Juuliku", "p": 4.3 },
   { "a": "Kanama-Üksnurme tee", "l": "Juuliku", "p": 2.0 },
   { "a": "Kanama-Üksnurme tee", "l": "Üksnurme teerist", "p": 4.3 },
-  { "a": "Rahula", "l": "Üksnurme teerists", "p": 5.7 },
+  { "a": "Rahula", "l": "Üksnurme teerist", "p": 5.7 },
   { "a": "Saku Üksnurme ring", "l": "Üksnurme teerist", "p": 2.0 },
   { "a": "Saku Üksnurme ring", "l": "Saku", "p": 2.0 },
   { "a": "Saku Üksnurme ring", "l": "Kasemetsa", "p": 2.4 },
