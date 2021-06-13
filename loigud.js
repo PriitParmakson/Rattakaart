@@ -152,5 +152,8 @@ var loigud = [
   { "a": "Jõeveere teeots", "l": "Alliku-Püha teerist", "p": 2.3 },
   { "a": "Jõeveere teeots", "l": "Koidu ring", "p": 3.2 },
   { "a": "Jõeveere teeots", "l": "Hüüru", "p": 2.3 },
-  { "a": "Riisipere", "l": "Haiba", "p": 10.3 }
+  { "a": "Riisipere", "l": "Haiba", "p": 10.3 },
+  { "a": "Treppoja", "l": "Kersalu", "p": 4.4 },
+  { "a": "Madise", "l": "Kersalu", "p": 8.7 },
+  { "a": "Madise", "l": "Padise", "p": 7.3 }
 ]
