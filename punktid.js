@@ -83,6 +83,7 @@ var punktid = [
   { "nimi": "Tade viadukt", "loc": [59.183249, 25.083014] },
   { "nimi": "Tammemäe", "loc": [59.316427, 24.685761] },
   { "nimi": "Tammiku", "loc": [59.207465, 24.940706] },
+  { "nimi": "Tiskre", "loc": [59.432609, 24.562482] },
   { "nimi": "Treppoja", "loc": [59.341311, 24.266643] },
   { "nimi": "Tuhala", "loc": [59.225670, 24.964194] },
   { "nimi": "Tutermaa", "loc": [59.329327, 24.470205] },

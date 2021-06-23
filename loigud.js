@@ -158,5 +158,7 @@ var loigud = [
   { "a": "Leetse teerist", "l": "Kersalu", "p": 5.3 },
   { "a": "Madise", "l": "Leetse teerist", "p": 7.9 },
   { "a": "Paldiski majakas", "l": "Leetse teerist", "p": 7.8 },
+  { "a": "Harku", "l": "Tiskre", "p": 7.7 },
+  { "a": "Haabersti", "l": "Tiskre", "p": 5.3 },
   { "a": "Madise", "l": "Padise", "p": 7.3 }
 ]
