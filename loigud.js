@@ -141,6 +141,7 @@ var loigud = [
   { "a": "Vääna", "l": "Püha", "p": 7.1 },
   { "a": "Viti", "l": "Rannamõisa", "p": 7.7 },
   { "a": "Rannamõisa", "l": "Haabersti", "p": 9.3 },
+  { "a": "Rannamõisa", "l": "Tiskre", "p": 4.0 },
   { "a": "Haabersti", "l": "Harku", "p": 5.4 },
   { "a": "Vanamõisa", "l": "Koidu ring", "p": 3.9 },
   { "a": "Vanamõisa", "l": "Saue", "p": 0.8 },
