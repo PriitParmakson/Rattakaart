@@ -41,6 +41,7 @@ var punktid = [
   { "nimi": "Kose rist", "loc": [59.167044, 25.176373] },
   { "nimi": "Kostivere (Aruküla t)", "loc": [59.426089, 25.076936] },
   { "nimi": "Kääbastemägi", "loc": [59.198609, 24.469507] },
+  { "nimi": "Kumna teeots", "loc": [59.321213, 24.457202] },
   { "nimi": "Laagri", "loc": [59.351725, 24.610383] },
   { "nimi": "Laagri (Harku tee ots)", "loc": [59.351241, 24.627765] },
   { "nimi": "Lagedi", "loc": [59.402105, 24.941926] },
