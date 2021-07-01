@@ -161,5 +161,6 @@ var loigud = [
   { "a": "Paldiski majakas", "l": "Leetse teerist", "p": 7.8 },
   { "a": "Harku", "l": "Tiskre", "p": 7.7 },
   { "a": "Haabersti", "l": "Tiskre", "p": 5.3 },
+  { "a": "Viti", "l": "Vääna-Jõesuu", "p": 1.6 },
   { "a": "Madise", "l": "Padise", "p": 7.3 }
 ]
