@@ -166,5 +166,7 @@ var loigud = [
   { "a": "Kumna teeots", "l": "Valingu", "p": 2.2 },
   { "a": "Kumna teeots", "l": "Vääna (Kurna tee ots)", "p": 9.2 },
   { "a": "Vääna", "l": "Vääna (Kurna tee ots)", "p": 0.9 },
+  { "a": "Tiskre", "l": "Järvekalda tee", "p": 4.8 },
+  { "a": "Astangu", "l": "Järvekalda tee", "p": 1.5 },
   { "a": "Madise", "l": "Padise", "p": 7.3 }
 ]

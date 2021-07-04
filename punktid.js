@@ -18,6 +18,7 @@ var punktid = [
   { "nimi": "Jõeveere teeots", "loc": [59.361033, 24.552862] },
   { "nimi": "Jõgisoo", "loc": [59.285276, 24.521525] },
   { "nimi": "Jüri", "loc": [59.358283, 24.891069] },
+  { "nimi": "Järvekalda tee", "loc": [59.407126, 24.619084] },
   { "nimi": "Kaberla", "loc": [59.465066, 25.240145] },
   { "nimi": "Kaberneeme", "loc": [59.513032, 25.269047] },
   { "nimi": "Kadaka", "loc": [59.394910, 24.965664] },
