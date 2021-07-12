@@ -108,6 +108,7 @@ var loigud = [
   { "a": "Vääna (Kurna tee ots)", "l": "Keila-Joa", "p": 6.3 },
   { "a": "Laulasmaa", "l": "Keila-Joa", "p": 5.4 },
   { "a": "Laulasmaa", "l": "Lohusalu", "p": 4.1 },
+  { "a": "Keila-Joa", "l": "Vääna-Jõesuu", "p": 8.5 },
   { "a": "Laulasmaa", "l": "Treppoja", "p": 4.7 },
   { "a": "Laagri", "l": "Vanemuise", "p": 4.1 },
   { "a": "Lagedi (Kostivere tee)", "l": "Linnuse t", "p": 6 },
