@@ -5,6 +5,7 @@ var loigud = [
   { "a": "Kaberla", "l": "Viru raba teerist", "p": 24.2 },
   { "a": "Võsu-Kotka teerist", "l": "Viru raba teerist", "p": 9.2 },
   { "a": "Võsu-Kotka teerist", "l": "Võsupere teerist", "p": 15.7 },
+  { "a": "Sagadi", "l": "Võsupere teerist", "p": 8.6 },
   { "a": "Kadaka", "l": "Lagedi", "p": 1.7 },
   { "a": "Sagadi", "l": "Altja", "p": 5.5 },
   { "a": "Koolimäe", "l": "Altja", "p": 7.4 },
