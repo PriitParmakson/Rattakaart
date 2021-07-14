@@ -42,6 +42,7 @@ var punktid = [
   { "nimi": "Kose", "loc": [59.186829, 25.164587] },
   { "nimi": "Koolimäe", "loc": [59.615273, 26.016195] },
   { "nimi": "Kose rist", "loc": [59.167044, 25.176373] },
+  { "nimi": "Kostivere", "loc": [59.426524, 25.099222] },
   { "nimi": "Kostivere (Aruküla t)", "loc": [59.426089, 25.076936] },
   { "nimi": "Kääbastemägi", "loc": [59.198609, 24.469507] },
   { "nimi": "Kumna teeots", "loc": [59.321213, 24.457202] },
