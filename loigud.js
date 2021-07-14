@@ -23,6 +23,8 @@ var loigud = [
   { "a": "Rebala", "l": "Jõelähtme", "p": 3.7 },
   { "a": "Jõelähtme", "l": "Kaberla", "p": 7.1 },
   { "a": "Vandjala", "l": "Jõelähtme", "p": 3.7 },
+  { "a": "Kostivere", "l": "Nehatu", "p": 11.2 },
+  { "a": "Kostivere", "l": "Jõelähtme", "p": 2.8 },
   { "a": "Aruküla", "l": "Jõelähtme", "p": 12.0 },
   { "a": "Aruküla", "l": "Kadaka", "p": 7.9 },
   { "a": "Lagedi", "l": "Lagedi (Kostivere tee)", "p": 1.6 },
